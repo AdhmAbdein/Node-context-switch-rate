@@ -1,0 +1,11 @@
+
+groups:
+  - name: context_switch_rate
+    rules:
+      - record: context_switch_rate_rule
+        expr: rate(node_context_switches_total[1m])
+        labels:
+          node1: context_switch_rate
+   # context switch rate refers to the frequency at which a operating system switches the CPU from executing one process to another
+   # context switch rate is the number of context switches that occur per unit of time (per second).
+

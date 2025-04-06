@@ -1,0 +1,9 @@
+groups:
+  - name: context_switch_rate
+    rules:
+      - alert: context_switch_rate_alert
+        expr: context_switch_rate_rule > 10000
+        for: 1m
+        annotations:
+          summary: "context switch rate per second in {{ $labels.instance }}"
+          description: "context switch rate per second is  {{ $value }}"
